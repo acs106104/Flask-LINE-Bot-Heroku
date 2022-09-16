@@ -36,7 +36,7 @@ def handle_message(event):
     get_message = event.message.text
 
     # Send To Line
-    reply = TextSendMessage(text=f"{get_message}")
+    reply = TextSendMessage(text=f"Reply: {get_message}")
     line_bot_api.reply_message(event.reply_token, reply)
 
 @handler.add(BeaconEvent)
