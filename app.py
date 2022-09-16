@@ -6,7 +6,7 @@ from flask import Flask, abort, request
 # https://github.com/line/line-bot-sdk-python
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
-from linebot.models import MessageEvent, TextMessage, TextSendMessage
+from linebot.models import MessageEvent, TextMessage, TextSendMessage, BeaconEvent
 
 app = Flask(__name__)
 
@@ -38,3 +38,11 @@ def handle_message(event):
     # Send To Line
     reply = TextSendMessage(text=f"{get_message}")
     line_bot_api.reply_message(event.reply_token, reply)
+
+@handler.add(BeaconEvent)
+def handle_beacon(event):
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(
+            text='Got beacon event. hwid={}, device_message(hex string)={}'.format(
+                event.beacon.hwid, event.beacon.dm)))
