@@ -45,7 +45,7 @@ def handle_beacon(event):
     hwid = event.beacon.hwid
     # reply = TextSendMessage(text=f"Beacon 新通知！\nGot beacon event. hwid= {hwid}")
     reply = FlexSendMessage(
-    alt_text='hello',
+    alt_text='Beacon 通知！',
     contents={
         "type": "bubble",
         "direction": "ltr",
@@ -63,6 +63,18 @@ def handle_beacon(event):
                 "contents": []
             }
             ]
+        },
+         "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+                "type": "text",
+                "text": "接收到的 hwid: " + str(hwid),
+                "align": "center",
+                "contents": []
+            }
+            ]
         }
     }
     
@@ -76,15 +88,15 @@ def handle_beacon(event):
     #         "aspectRatio": "1.51:1",
     #         "aspectMode": "fit"
     #     },
-    #     "body": {
-    #     "type": "box",
-    #     "layout": "vertical",
-    #     "contents": [
-    #     {
-    #         "type": "text",
-    #         "text": "接收到的 hwid: " + str(hwid),
-    #         "align": "center",
-    #         "contents": []
-    #     }
-    #     ]
-    #     }
+        # "body": {
+        # "type": "box",
+        # "layout": "vertical",
+        # "contents": [
+        # {
+        #     "type": "text",
+        #     "text": "接收到的 hwid: " + str(hwid),
+        #     "align": "center",
+        #     "contents": []
+        # }
+        # ]
+        # }
