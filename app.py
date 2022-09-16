@@ -41,7 +41,6 @@ def handle_message(event):
 
 @handler.add(BeaconEvent)
 def handle_beacon(event): 
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f"偵測如下："))
     msg = "Beacon 新通知！\nGot beacon event. hwid="+ event.beacon.hwid +"device_message(hex string)="+ event.beacon.dm
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
     # line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f"偵測如下："))
