@@ -40,10 +40,9 @@ def handle_message(event):
     line_bot_api.reply_message(event.reply_token, reply)
 
 @handler.add(BeaconEvent)
-def handle_beacon(event):
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f"Beacon 通知！"))
+def handle_beacon(event): 
+    # line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f"Beacon 通知！"))
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(
-            text='Got beacon event. hwid={}, device_message(hex string)={}'.format(
+        TextSendMessage(text='Got beacon event. hwid={}, device_message(hex string)={}'.format(
                 event.beacon.hwid, event.beacon.dm)))
