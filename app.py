@@ -63,27 +63,28 @@ def handle_beacon(event):
                 "contents": []
             }
             ]
-        },
-        "hero": {
-            "type": "image",
-            "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3e7653db-f3c4-40c9-9f32-c31d7447f7de/sketch-1531214280539.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220916/us-west-2/s3/aws4_request&X-Amz-Date=20220916T132633Z&X-Amz-Expires=86400&X-Amz-Signature=6cc6f8d8b9e9208c3b4725681d0c9e9c3825799afd813718c352abc4dd757674&X-Amz-SignedHeaders=host&response-content-disposition=filename =\"sketch-1531214280539.png\"&x-id=GetObject",
-            "size": "full",
-            "aspectRatio": "1.51:1",
-            "aspectMode": "fit"
-        },
-        "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-        {
-            "type": "text",
-            "text": "接收到的 hwid: " + str(hwid),
-            "align": "center",
-            "contents": []
-        }
-        ]
         }
     }
     
 )
     line_bot_api.reply_message(event.reply_token, reply)
+
+    # "hero": {
+    #         "type": "image",
+    #         "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3e7653db-f3c4-40c9-9f32-c31d7447f7de/sketch-1531214280539.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220916/us-west-2/s3/aws4_request&X-Amz-Date=20220916T132633Z&X-Amz-Expires=86400&X-Amz-Signature=6cc6f8d8b9e9208c3b4725681d0c9e9c3825799afd813718c352abc4dd757674&X-Amz-SignedHeaders=host&response-content-disposition=filename =\"sketch-1531214280539.png\"&x-id=GetObject",
+    #         "size": "full",
+    #         "aspectRatio": "1.51:1",
+    #         "aspectMode": "fit"
+    #     },
+    #     "body": {
+    #     "type": "box",
+    #     "layout": "vertical",
+    #     "contents": [
+    #     {
+    #         "type": "text",
+    #         "text": "接收到的 hwid: " + str(hwid),
+    #         "align": "center",
+    #         "contents": []
+    #     }
+    #     ]
+    #     }
